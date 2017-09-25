@@ -24,14 +24,29 @@ class Book
 
     // Add the methods here ...
     
-    //Return author name
+    // Return author name
     public String getAuthor()
     {
         return author;
     }
     
+    // Return title name
     public String getTitle()
     {
         return title;
+    }
+    
+    // Methods added from 2.84
+    
+    // Prints author name
+    public void printAuthor()
+    {
+        System.out.println(author);
+    }
+    
+    // Prints title name
+    public void printTitle()
+    {
+        System.out.println(title);
     }
 }
