@@ -15,6 +15,8 @@ class Book
     private int pages;
     // Extra field from 2.88
     private String refNumber;
+    //Extra field from 2.91
+    private int borrowed;
 
     /**
      * Set the author and title fields when this object
@@ -27,6 +29,7 @@ class Book
         title = bookTitle;
         pages = pageNumber;
         refNumber = "";
+        borrowed = 0;
     }
 
     // Add the methods here ...
@@ -68,6 +71,17 @@ class Book
         return refNumber;
     }
     
+    //Methods from 2.91
+    public void borrow()
+    {
+        borrowed = ++borrowed;
+    }
+    
+    public int getBorrowed()
+    {
+        return borrowed;
+    }
+    
     // Methods added from 2.84
     
     // Prints author name
@@ -89,12 +103,19 @@ class Book
         System.out.print(pages + " ");
     }
     
+    // Prints reference number
     public void printRefNumber()
     {
         if (refNumber.length() >= 3)
         System.out.print(refNumber + " ");
         else
         System.out.print("ZZZ ");
+    }
+    
+    // Prints number of times borrowed
+    public void printBorrowed()
+    {
+        System.out.print(borrowed + " ");
     }
     
     // Method from 2.87
@@ -109,6 +130,7 @@ class Book
         System.out.println("Reference Number: " + getRefNumber());
         else
         System.out.println("Reference Number: ZZZ ");
+        System.out.println("Number of times borrowed: " + getBorrowed());
         //Skip extra line
         System.out.println("");
     }
