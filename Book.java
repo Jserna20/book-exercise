@@ -17,17 +17,20 @@ class Book
     private String refNumber;
     //Extra field from 2.91
     private int borrowed;
+    //Extra field from 2.92
+    private boolean courseText;
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
     // Edit in constructor to include page number
-    public Book(String bookAuthor, String bookTitle, int pageNumber)
+    public Book(String bookAuthor, String bookTitle, int pageNumber, boolean text)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = pageNumber;
+        courseText = text;
         refNumber = "";
         borrowed = 0;
     }
@@ -82,6 +85,11 @@ class Book
         return borrowed;
     }
     
+    public boolean isCourseText()
+    {
+        return courseText;
+    }
+    
     // Methods added from 2.84
     
     // Prints author name
@@ -118,6 +126,15 @@ class Book
         System.out.print(borrowed + " ");
     }
     
+    // Prints if use for textbook in a course
+    public void printCourseText()
+    {
+        if (courseText = true)
+        System.out.print("yes ");
+        else
+        System.out.print("no ");
+    }
+    
     // Method from 2.87
     // Prints all details
     public void printDetails()
@@ -130,7 +147,15 @@ class Book
         System.out.println("Reference Number: " + getRefNumber());
         else
         System.out.println("Reference Number: ZZZ ");
+        
+        // Modification from 2.91
         System.out.println("Number of times borrowed: " + getBorrowed());
+        // Added for consistency
+        if (courseText == true)
+        System.out.println("If it is used for a textbook in a course: yes");
+        else
+        System.out.println("If it is used for a textbook in a course: no");
+        
         //Skip extra line
         System.out.println("");
     }
