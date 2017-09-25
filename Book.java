@@ -53,7 +53,14 @@ class Book
     // Methods from 2.88
     public void setRefNumber(String ref)
     {
+        // Modification from 2.90
+        if (ref.length() >= 3)
         refNumber = ref;
+        else
+        {
+            System.out.println("Error!! Reference number could not be found. Enter a number with at least 3 characters");
+            refNumber = "";
+        }
     }
     
     public String getRefNumber()
@@ -84,7 +91,7 @@ class Book
     
     public void printRefNumber()
     {
-        if (refNumber.length() >= 1)
+        if (refNumber.length() >= 3)
         System.out.print(refNumber + " ");
         else
         System.out.print("ZZZ ");
@@ -98,7 +105,7 @@ class Book
         System.out.println("Author: " + getAuthor());
         System.out.println("Pages: " + getPages());
         // Modification from 2.89
-        if (refNumber.length() >= 1)
+        if (refNumber.length() >= 3)
         System.out.println("Reference Number: " + getRefNumber());
         else
         System.out.println("Reference Number: ZZZ ");
