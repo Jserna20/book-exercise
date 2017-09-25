@@ -52,12 +52,28 @@ class Book
     // Prints author name
     public void printAuthor()
     {
-        System.out.println(author);
+        System.out.print(author + ", ");
     }
     
     // Prints title name
     public void printTitle()
     {
-        System.out.println(title);
+        System.out.print(title + ", ");
+    }
+    
+    // Added for consistency
+    // Prints page number
+    public void printPages()
+    {
+        System.out.print(pages + ", ");
+    }
+    
+    //Method from 2.87
+    //Prints all details
+    public void printDetails()
+    {
+        System.out.println("Title: " + getTitle());
+        System.out.println("Author: " + getAuthor());
+        System.out.println("Pages: " + getPages());
     }
 }
