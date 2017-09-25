@@ -66,28 +66,43 @@ class Book
     // Prints author name
     public void printAuthor()
     {
-        System.out.print(author + ", ");
+        System.out.print(author + " ");
     }
     
     // Prints title name
     public void printTitle()
     {
-        System.out.print(title + ", ");
+        System.out.print(title + " ");
     }
     
     // Added for consistency
     // Prints page number
     public void printPages()
     {
-        System.out.print(pages + ", ");
+        System.out.print(pages + " ");
     }
     
-    //Method from 2.87
-    //Prints all details
+    public void printRefNumber()
+    {
+        if (refNumber.length() >= 1)
+        System.out.print(refNumber + " ");
+        else
+        System.out.print("ZZZ ");
+    }
+    
+    // Method from 2.87
+    // Prints all details
     public void printDetails()
     {
         System.out.println("Title: " + getTitle());
         System.out.println("Author: " + getAuthor());
         System.out.println("Pages: " + getPages());
+        // Modification from 2.89
+        if (refNumber.length() >= 1)
+        System.out.println("Reference Number: " + getRefNumber());
+        else
+        System.out.println("Reference Number: ZZZ ");
+        //Skip extra line
+        System.out.println("");
     }
 }
